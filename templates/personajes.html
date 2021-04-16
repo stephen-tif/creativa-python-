@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="container mx-auto p-4 mt-4 rounded">
+        <h1 class="display-4 text-white">Personajes Breakin Bad</h1>
+        <div class="mt-4 pb-4 table-responsive bg-white p-4 rounded">
+            <table class="table table-bordered table-hover rounded" width="100%" id="tpersonajes">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nombre</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>Nickname</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in data %}
+                        <tr>
+                            <td>
+                                <img src="{{ r.img }}" alt="{{ r.img }}" class="rounded img-fluid" width="40px">
+                            </td>
+                            <td>{{ r.name }}</td>
+                            <td>{{ r.birthday }}</td>
+                            <td>{{ r.nickname }}</td>
+                            <td>
+                                <a class="btn btn-primary" href="/personaje/{{ r.char_id }}">Ver</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

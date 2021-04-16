@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+    {% block content %}
+
+    <div class="container mx-auto p-4 mt-4 rounded bg-white">
+        <a href="/" class="card-link font-weight-bold">Regresar</a>
+        {% for r in data %}
+            <div class="card mx-auto" style="width: 20rem;">
+                <img src="{{ r.img }}" alt="{{ r.img }}"class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><h4>{{ r.name }}</h4></h5>
+                    <p class="card-text text-muted">{{ r.nickname }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>Ocupación: </strong>
+                        {% for i in r.occupation %} 
+                            <ul>
+                                <li>{{ i }}</li>
+                            </ul>
+                        {% endfor %}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Fecha de naciminto: </strong>
+                        {{r.birthday}}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Personaje representado por: </strong>
+                        {{r.portrayed}}
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+    
+
+{% endblock %}
