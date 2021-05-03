@@ -1,9 +1,25 @@
+#       #############
+#       ##         ##
+#       #  ~~   ~~  # 
+#       #  ()   ()  # 
+#       (     ^     )
+#        |         |
+#        |  {===}  |
+#         \       /
+#        /  -----  \
+#     ---  |%\ /%|  ---
+#    /     |%%%%%|     \
+#   /      |%/ \%|      \
+#  ╔═════════════════════════╗ 
+#  ║    MADE BY TIF MASTER   ║
+#  ║    Date: 03/05/2021     ║
+#  ╚═════════════════════════╝
+
 from flask import Flask, render_template
 import requests
 import json
 
 app = Flask(__name__)
-
 
 @app.route("/")
 def index():
